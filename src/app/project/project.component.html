@@ -1,0 +1,11 @@
+<div>
+  <h1>My Projects</h1>
+
+  <div *ngFor='let project of projects; let i = index' class='p-3 mt-3 bg-secondary'>
+    <h2>{{ project.title }}</h2>
+    <p>{{ project.description }}</p>
+    <button (click)='showdetails(i)' class='btn btn-success'>Show Details</button>
+    <app-projectdetails *ngIf='project.showfulldetails' [project]='project' (todeleproject)='deleSpecProject($event, i)'></app-projectdetails>
+  </div>
+
+</div>
